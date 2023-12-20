@@ -748,15 +748,19 @@ a.filter_link{
 }
 .team_img_section{
     width: 50%;
+    background-image: url(./img/testimonial.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 .main_team_heading_section{
     width: 50%;
 }
-.team_img_section img{
+/* .team_img_section img{
     width: 100%;
     height: 100%;
 
-}
+} */
 #team_section .row{
     display: flex;
 }
@@ -853,10 +857,13 @@ a.filter_link{
   
   /* Style the accordion panel. Note: hidden by default */
   .panel {
-    padding: 0 18px;
     background-color: white;
-    display: none;
-    overflow: hidden;
+  border-left: 1px solid whitesmoke;
+  border-right: 1px solid whitesmoke;
+  padding: 0 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
   }
   .hr_class{
     color: gray;
@@ -876,6 +883,17 @@ a.filter_link{
   }
   .first_accordion{
     border-bottom: 1px solid #e6e6e6;
+  }
+  button.accordion:after {
+    font-family: FontAwesome;
+    content: "\2b";
+    font-family: "fontawesome";
+    font-size: 18px;
+    float: right;
+  }
+  
+  button.accordion.is-open:after {
+    content: "\f068";
   }
 
   /* Footer Section */
@@ -956,4 +974,36 @@ align-items: center;
 .social_icon i:hover{
     background-color: #07a807;
     color: white;
+}
+
+
+@keyframes spin_roll {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        opacity: 0;
+    }
+    26% {
+        transform: translateX(1.25em);
+    }
+    27% {
+        transform: translateX(-1.25em);
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.home_btn:hover i{
+    animation: spin_roll .4s cubic-bezier(.21,.6,.35,1);
+}
+.img_desing:hover img{
+    animation: spin_roll .4s cubic-bezier(.21,.6,.35,1);
+}
+.btn_section:hover i{
+    animation: spin_roll .4s cubic-bezier(.21,.6,.35,1);
 }
